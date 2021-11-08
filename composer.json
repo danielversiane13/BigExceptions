@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Laravel kit extra exceptions for BigBang",
     "license": "MIT",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "authors": [
         {
             "name": "Daniel Versiane",
