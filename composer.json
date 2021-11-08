@@ -1,0 +1,28 @@
+{
+    "name": "danielversiane13/big-exceptions",
+    "type": "library",
+    "description": "Laravel kit extra exceptions for BigBang",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Daniel Versiane",
+            "email": "daniel.versiane@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Danielversiane13\\BigExceptions\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Danielversiane13\\BigExceptions\\BigExceptionsProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    }
+}
