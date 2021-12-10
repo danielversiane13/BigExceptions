@@ -7,11 +7,11 @@ use Illuminate\Http\JsonResponse;
 
 abstract class AbstractException extends Exception implements IBigException
 {
-    public function __construct(string $message, protected int $status_code, protected array $errors = [], protected int $map_code = 0)
+    public function __construct(string $message, protected int $statusCode, protected array $errors = [], protected int $mapCode = 0)
     {
         $this->message = $message;
-        $this->status_code = $status_code;
-        $this->map_code = $map_code;
+        $this->statusCode = $statusCode;
+        $this->mapCode = $mapCode;
         $this->errors = $errors;
     }
 
@@ -22,7 +22,7 @@ abstract class AbstractException extends Exception implements IBigException
      */
     public function getStatusCode(): int
     {
-        return $this->status_code;
+        return $this->statusCode;
     }
 
     /**
@@ -42,7 +42,7 @@ abstract class AbstractException extends Exception implements IBigException
      */
     public function getMapCode(): int
     {
-        return $this->map_code;
+        return $this->mapCode;
     }
 
     public function render(): JsonResponse
