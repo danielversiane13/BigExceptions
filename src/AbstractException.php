@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\Http;
 
 abstract class AbstractException extends Exception implements IBigException
 {
-    public function __construct(string $message, protected int $statusCode, protected array $errors = [], protected int $mapCode = 0)
+    protected int $statusCode;
+    protected array $errors;
+    protected int $mapCode;
+
+    public function __construct(string $message, int $statusCode, array $errors = [], int $mapCode = 0)
     {
         $this->message = $message;
         $this->statusCode = $statusCode;
