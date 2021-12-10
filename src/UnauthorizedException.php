@@ -2,7 +2,7 @@
 
 namespace Danielversiane13\BigExceptions;
 
-class UnauthorizedException extends AbstractException
+class UnauthorizedException extends BigException
 {
     public function __construct(string $message, array $errors = [], int $mapCode = 0)
     {

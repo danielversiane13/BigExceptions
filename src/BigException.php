@@ -6,7 +6,7 @@ use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Http;
 
-abstract class AbstractException extends Exception implements IBigException
+abstract class BigException extends Exception implements IBigException
 {
     protected int $statusCode;
     protected array $errors;

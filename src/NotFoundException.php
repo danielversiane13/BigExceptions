@@ -2,7 +2,7 @@
 
 namespace Danielversiane13\BigExceptions;
 
-class NotFoundException extends AbstractException
+class NotFoundException extends BigException
 {
     public function __construct(string $message, array $errors = [], int $mapCode = 0)
     {

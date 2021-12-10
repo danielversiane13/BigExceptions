@@ -2,7 +2,7 @@
 
 namespace Danielversiane13\BigExceptions;
 
-class MethodNotAllowedException extends AbstractException
+class MethodNotAllowedException extends BigException
 {
     public function __construct(string $message)
     {

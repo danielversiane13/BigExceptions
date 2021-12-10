@@ -2,7 +2,7 @@
 
 namespace Danielversiane13\BigExceptions;
 
-class ForbiddenException extends AbstractException
+class ForbiddenException extends BigException
 {
     public function __construct(string $message, array $errors = [], int $mapCode = 0)
     {

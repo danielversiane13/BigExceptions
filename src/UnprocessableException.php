@@ -2,7 +2,7 @@
 
 namespace Danielversiane13\BigExceptions;
 
-class UnprocessableException extends AbstractException
+class UnprocessableException extends BigException
 {
     public function __construct(string $message, array $errors = [], int $mapCode = 0)
     {

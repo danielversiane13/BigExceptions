@@ -2,7 +2,7 @@
 
 namespace Danielversiane13\BigExceptions;
 
-class BadRequestException extends AbstractException
+class BadRequestException extends BigException
 {
     public function __construct(string $message, array $errors = [], int $mapCode = 0)
     {
