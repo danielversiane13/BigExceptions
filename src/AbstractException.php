@@ -4,6 +4,7 @@ namespace Danielversiane13\BigExceptions;
 
 use Exception;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Http;
 
 abstract class AbstractException extends Exception implements IBigException
 {
@@ -57,5 +58,23 @@ abstract class AbstractException extends Exception implements IBigException
         }
 
         return response()->json($jsonResponse, $this->statusCode);
+    }
+
+    public function report(): void
+    {
+        if (!$uri = env('TELEMETRY_URI')) {
+            return;
+        }
+
+        $request = [
+            'service' => env('APP_NAME'),
+            'message' => $this->message,
+            'code' => $this->mapCode,
+            'status_code' => $this->statusCode,
+            'errors' => $this->errors,
+            'request' => request()->all(),
+        ];
+
+        Http::withHeaders(['Accept' => 'application/json'])->baseUrl($uri)->post(env('TELEMETRY_URL'), $request);
     }
 }
