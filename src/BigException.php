@@ -66,7 +66,7 @@ abstract class BigException extends Exception implements IBigException
 
     public function report(): void
     {
-        if (!$uri = env('TELEMETRY_URI')) {
+        if (!$uri = env('REPORT_URI')) {
             return;
         }
 
@@ -79,6 +79,6 @@ abstract class BigException extends Exception implements IBigException
             'request' => request()->all(),
         ];
 
-        Http::withHeaders(['Accept' => 'application/json'])->baseUrl($uri)->post(env('TELEMETRY_URL'), $request);
+        Http::withHeaders(['Accept' => 'application/json'])->baseUrl($uri)->post(env('REPORT_URL'), $request);
     }
 }
