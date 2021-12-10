@@ -48,14 +48,14 @@ abstract class AbstractException extends Exception implements IBigException
     public function render(): JsonResponse
     {
         $jsonResponse = [
-            'message' => $this->getMessage(),
-            'code' => $this->getMapCode()
+            'message' => $this->message,
+            'code' => $this->mapCode,
         ];
 
-        if (count($this->getErrors())) {
-            $jsonResponse['errors'] = $this->getErrors();
+        if (count($this->errors)) {
+            $jsonResponse['errors'] = $this->errors;
         }
 
-        return response()->json($jsonResponse, $this->getStatusCode());
+        return response()->json($jsonResponse, $this->statusCode);
     }
 }
