@@ -15,13 +15,6 @@
             "Danielversiane13\\BigExceptions\\": "src"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Danielversiane13\\BigExceptions\\BigExceptionsProvider"
-            ]
-        }
-    },
     "require": {
         "php": ">=7.2"
     }
